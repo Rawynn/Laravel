@@ -19,24 +19,7 @@
     </style>
 </head>
 <body class="bg-grey">
-    <div class="container mt-5 mb-5">
-        <h1 class="text-uppercase text-center mt-5 mb-5 fw-bold sw-font">Star Wars characters</h1>
-        <div class="people-wrapper">
-            <div class="flex flex-wrap justify-content-center">
-                @foreach ($allPeople as $person)
-                <div class="person-card m-3">
-                    <div class="person-card-content text-center">
-                        <h2 class="fw-bold mb-4">{{ $person['name'] }}</h2>
-                        <h3>Birth year: {{ $person['birth_year'] }}</h3>
-                        <h3>Gender: {{ $person['gender'] }}</h3>
-                        <h3>Height: {{ $person['height'] }}</h3>
-                        <h3>Mass: {{ $person['mass'] }}</h3>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
+    @yield('content')
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container text-center">
             Powered by <a href="https://swapi.dev/documentation" class="underline hover:text-gray-300">swapi.dev</a>

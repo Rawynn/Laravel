@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ViewModels\PeopleViewModel;
 use Illuminate\Support\Facades\Http;
 
 class PeopleController extends Controller
@@ -13,8 +14,10 @@ class PeopleController extends Controller
 
         //dump($allPeople);
 
-        return view('index', [
-            'allPeople' => $allPeople
-        ]);
+        $viewModel = new PeopleViewModel(
+            $allPeople,
+        );
+
+        return view('people.index', $viewModel);
     }
 }

@@ -11290,6 +11290,12 @@ textarea.form-control-lg {
   background: #f2f2f2;
 }
 
+body {
+  background: url("https://img.wallpapersafari.com/desktop/1920/1080/38/0/tNfnSd.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .person-card {
   overflow: hidden;
   border-radius: 20px;
@@ -11297,6 +11303,7 @@ textarea.form-control-lg {
   box-shadow: 0 0 20px 8px #d0d0d0;
   min-width: 400px;
   transition: 0.3s;
+  background-color: #fff;
 }
 @media (max-width: 500px) {
   .person-card {
@@ -11315,4 +11322,8 @@ textarea.form-control-lg {
 
 .sw-font {
   font-family: "Star Jedi", arial;
+}
+
+.sw-yellow {
+  color: #ffd202;
 }
