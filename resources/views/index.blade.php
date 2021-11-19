@@ -61,7 +61,7 @@
             }
 
             //const axios = require('axios');
-            async function fetchSW(){
+            function fetchSW(){
                 const options = {
                     url: 'https://swapi.dev/api/people/',
                     method: 'GET',
@@ -71,10 +71,13 @@
                     },
                     
                 };
-
-                let res = await axios(options)
+                isLoading = false;
+                axios(options)
                     .then(response => {
+                        isLoading = true;
                         people = response.data.results;
+                        console.log(response.status);
+                        console.log(response.data.results);
                         isLoading = false;
                     })
                     .catch( error=>console.log(error));
