@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 });*/
 
 
-Route::get('/', 'PeopleController@index') -> name('people.index');
+//Route::get('/', 'PeopleController@index') -> name('people.index');
 //Route::get('/people/{person}', 'PeopleController@show') -> name('people.show');
 
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('index');
-});*/
+});
