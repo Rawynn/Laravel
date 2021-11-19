@@ -21,9 +21,25 @@
         
     </head>
     <body class="bg-grey">
-        <div x-cloak x-data="fetchSWData()" x-init ="fetch('https://swapi.dev/api/people/')
-                      .then(response => response.json())
-                      .then(data => people = data.results)"   class="flex w-full md:w-1/2 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+        <div x-cloak x-data="fetchSWData()" x-init ="const options = {
+                    url: 'https://swapi.dev/api/people/',
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    },
+                    
+                };
+                isLoading = false;
+                axios(options)
+                    .then(response => {
+                        isLoading = true;
+                        people = response.data.results;
+                        console.log(response.status);
+                        console.log(response.data.results);
+                        isLoading = false;
+                    })
+                    .catch( error=>console.log(error));"   class="flex w-full md:w-1/2 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
             <template x-if="people">
                 <div class="container mt-5 mb-5">
                     <h1 class="text-uppercase text-center mt-5 mb-5 fw-bold sw-font">Star Wars characters</h1>
